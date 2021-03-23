@@ -1,0 +1,39 @@
+.box {
+  height: 500px;
+  width: 500px;
+  flex: 0 0 40%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid blue;
+  margin-bottom: 30px;
+  box-shadow: 5px 5px;
+  border-radius: 25px;
+  background-color: cornsilk;
+}
+.button {
+  background-color: darkkhaki;
+  border: darkslategrey;
+  border-radius: 5px;
+  padding: 10px;
+}
+a:link {
+  color: red;
+  border: darkgoldenrod;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: firebrick;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}

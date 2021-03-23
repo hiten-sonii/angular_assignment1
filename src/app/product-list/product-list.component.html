@@ -1,0 +1,11 @@
+<div>
+  <!-- <ng-template #alert></ng-template> -->
+  <ol>
+    <li *ngFor="let product of products">
+      <app-product
+        [item]="product"
+        (removeItemEvent)="removeItem($event)"
+      ></app-product>
+    </li>
+  </ol>
+</div>
