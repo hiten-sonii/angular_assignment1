@@ -1,9 +1,9 @@
 <div class="box">
-  <img [src]="item.productImageUrl" height="200px" width="200px" />
+  <img [src]="item.productImage" height="200px" width="200px" />
   <h2>{{ item.productName | uppercase }}</h2>
-  <h3>{{ item.productDesc }}</h3>
+  <h3>{{ item.productDescription }}</h3>
   <h3>Price: Rs. {{ item.productPrice }}</h3>
   <div class="button">
-    <a (click)="removeItem(item.productId)">Remove Product</a>
+    <a (click)="removeItem(item.id)">Remove Product</a>
   </div>
 </div>

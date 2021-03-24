@@ -6,23 +6,27 @@ import * as productsJson from '../assets/products.json';
   providedIn: 'root',
 })
 export class ProductService {
-  constructor() {}
-
-  getProductObject(jsonData: any): Product {
-    const id: number = jsonData.id;
-    const name: string = jsonData.productName;
-    const desc: string = jsonData.productDescription;
-    const url: string = `assets/${jsonData.productImage}`;
-    const price: number = jsonData.productPrice;
-    return new Product(id, name, desc, url, price);
+  productsArray: Product[];
+  constructor() {
+    this.productsArray = [];
   }
-  getProducts() {
-    const dataFromJson: [] = (productsJson as any).default;
-    const productsArray: Product[] = [];
-    for (var i = 0; i < dataFromJson.length; i++) {
-      const product: Product = this.getProductObject(dataFromJson[i]);
-      productsArray.push(product);
+
+  getProducts(): Product[] {
+    const localData = localStorage.getItem('localData');
+    if (!localData) {
+      const dataFromJson = (productsJson as any).default;
+      this.productsArray = dataFromJson;
+      localStorage.setItem('localData', JSON.stringify(this.productsArray));
+    } else {
+      this.productsArray = JSON.parse(localData);
     }
-    return productsArray;
+    return this.productsArray;
+  }
+
+  removeProduct(id: number) {
+    this.productsArray = this.productsArray.filter(
+      (element) => element.id !== id
+    );
+    localStorage.setItem('localData', JSON.stringify(this.productsArray));
   }
 }

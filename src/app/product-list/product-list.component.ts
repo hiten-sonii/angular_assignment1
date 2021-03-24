@@ -31,9 +31,8 @@ export class ProductListComponent implements OnInit {
     componentRef.instance.emitter.subscribe((check) => {
       if (check) {
         componentRef.destroy();
-        this.products = this.products.filter(
-          (element) => element.productId !== id
-        );
+        this.products = this.products.filter((element) => element.id !== id);
+        this.productService.removeProduct(id);
       } else {
         componentRef.destroy();
       }

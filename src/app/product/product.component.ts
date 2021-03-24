@@ -14,7 +14,7 @@ export class ProductComponent implements OnInit {
   @Output() removeItemEvent: EventEmitter<number> = new EventEmitter<number>();
   ngOnInit(): void {}
   removeItem(id: number): void {
-    console.log(id);
+    console.log('id:', id);
     this.removeItemEvent.emit(id);
   }
 }

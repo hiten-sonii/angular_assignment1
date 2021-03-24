@@ -1,9 +1,9 @@
 export class Product {
-  productId: number;
+  id: number;
   productName: string;
-  productDesc: string;
+  productDescription: string;
   productPrice: number;
-  productImageUrl: string;
+  productImage: string;
 
   constructor(
     id: number,
@@ -12,10 +12,10 @@ export class Product {
     url: string,
     price: number
   ) {
-    this.productId = id;
+    this.id = id;
     this.productName = name;
-    this.productDesc = desc;
-    this.productImageUrl = url;
+    this.productDescription = desc;
+    this.productImage = `assets/${url}`;
     this.productPrice = price;
   }
 }
