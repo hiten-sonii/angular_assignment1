@@ -2,42 +2,42 @@
   {
     "id": 1,
     "productName": "Fan",
-    "productImage": "fan.jpg",
+    "productImage": "assets/fan.jpg",
     "productPrice": 3000,
     "productDescription": "This is a fan."
   },
   {
     "id": 2,
     "productName": "Cooler",
-    "productImage": "fan.jpg",
+    "productImage": "assets/fan.jpg",
     "productPrice": 6000,
     "productDescription": "This is a cooler."
   },
   {
     "id": 3,
     "productName": "AC",
-    "productImage": "fan.jpg",
+    "productImage": "assets/fan.jpg",
     "productPrice": 40000,
     "productDescription": "This is an Air Conditioner."
   },
   {
     "id": 4,
     "productName": "Water Bottle",
-    "productImage": "fan.jpg",
+    "productImage": "assets/fan.jpg",
     "productPrice": 500,
     "productDescription": "This is a water bottle."
   },
   {
     "id": 5,
     "productName": "Phone",
-    "productImage": "fan.jpg",
+    "productImage": "assets/fan.jpg",
     "productPrice": 20000,
     "productDescription": "This is a mobile phone"
   },
   {
     "id": 6,
     "productName": "Headphones",
-    "productImage": "fan.jpg",
+    "productImage": "assets/fan.jpg",
     "productPrice": 2000,
     "productDescription": "This is a headphone."
   }
