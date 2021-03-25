@@ -23,10 +23,37 @@ export class ProductService {
     return this.productsArray;
   }
 
-  removeProduct(id: number) {
-    this.productsArray = this.productsArray.filter(
-      (element) => element.id !== id
-    );
+  removeProduct(index: number) {
+    this.productsArray.splice(index, 1);
     localStorage.setItem('localData', JSON.stringify(this.productsArray));
+  }
+
+  addProduct(item: Product, index: number) {
+    this.productsArray.splice(index, 0, item);
+    localStorage.setItem('localData', JSON.stringify(this.productsArray));
+  }
+
+  getProductTypes(): string[] {
+    const typesArray: string[] = [];
+    this.productsArray.forEach((product) => {
+      if (!typesArray.includes(product.productType)) {
+        typesArray.push(product.productType);
+      }
+    });
+    return typesArray;
+  }
+
+  getBrandsByType(productType: string): string[] {
+    const brandsArray: string[] = [];
+    this.productsArray.forEach((product) => {
+      if (
+        product.productType === productType &&
+        !brandsArray.includes(product.brandName)
+      ) {
+        brandsArray.push(product.brandName);
+      }
+    });
+
+    return brandsArray;
   }
 }

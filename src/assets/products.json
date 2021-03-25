@@ -1,44 +1,119 @@
 [
   {
     "id": 1,
-    "productName": "Fan",
+    "productType": "Phone",
+    "productName": "Redmi Note 8",
+    "brandName": "Redmi",
     "productImage": "assets/fan.jpg",
     "productPrice": 3000,
-    "productDescription": "This is a fan."
+    "productDescription": "This is a very good phone. It has a good camera."
   },
   {
     "id": 2,
-    "productName": "Cooler",
+    "productType": "Laptop",
+    "productName": "HP 9876",
+    "brandName": "HP",
     "productImage": "assets/fan.jpg",
     "productPrice": 6000,
-    "productDescription": "This is a cooler."
+    "productDescription": "This is a fast laptop. It is very powerful."
   },
   {
     "id": 3,
-    "productName": "AC",
+    "productType": "Earphone",
+    "productName": "Noise Tune Active",
+    "brandName": "Noise",
     "productImage": "assets/fan.jpg",
     "productPrice": 40000,
-    "productDescription": "This is an Air Conditioner."
+    "productDescription": "This is an earphone. It is cheap and efficient."
   },
   {
     "id": 4,
-    "productName": "Water Bottle",
+    "productType": "Charger",
+    "brandName": "Dell",
+    "productName": "Dell Charger",
     "productImage": "assets/fan.jpg",
     "productPrice": 500,
-    "productDescription": "This is a water bottle."
+    "productDescription": "This is a laptop charger. You will love it."
   },
   {
     "id": 5,
-    "productName": "Phone",
+    "productType": "Phone",
+    "productName": "IPhone 11",
+    "brandName": "Apple",
     "productImage": "assets/fan.jpg",
     "productPrice": 20000,
-    "productDescription": "This is a mobile phone"
+    "productDescription": "This is a mobile phone. It has a very good camera quality."
   },
   {
     "id": 6,
-    "productName": "Headphones",
+    "productType": "Laptop",
+    "productName": "Dell Latitude",
+    "brandName": "Dell",
     "productImage": "assets/fan.jpg",
     "productPrice": 2000,
-    "productDescription": "This is a headphone."
+    "productDescription": "This is a laptop. It has 16 GB Ram."
+  },
+  {
+    "id": 7,
+    "productType": "Phone",
+    "productName": "Nokia 5423",
+    "brandName": "Nokia",
+    "productImage": "assets/fan.jpg",
+    "productPrice": 3000,
+    "productDescription": "This is a very good smartphone. It runs on android"
+  },
+  {
+    "id": 8,
+    "productType": "Laptop",
+    "productName": "Asus Rog 543",
+    "brandName": "Asus",
+    "productImage": "assets/fan.jpg",
+    "productPrice": 6000,
+    "productDescription": "This is a gaming laptop. It is very powerful."
+  },
+  {
+    "id": 9,
+    "productType": "Earphone",
+    "productName": "OnePlus Earbuds 2",
+    "brandName": "OnePlus",
+    "productImage": "assets/fan.jpg",
+    "productPrice": 40000,
+    "productDescription": "This is a very good earbuds product."
+  },
+  {
+    "id": 10,
+    "productType": "Charger",
+    "productName": "Redmi 20W Charger",
+    "brandName": "Redmi",
+    "productImage": "assets/fan.jpg",
+    "productPrice": 500,
+    "productDescription": "This is a charger. You will love it."
+  },
+  {
+    "id": 11,
+    "productType": "Phone",
+    "productName": "Vivo 172",
+    "brandName": "Vivo",
+    "productImage": "assets/fan.jpg",
+    "productPrice": 20000,
+    "productDescription": "This is a mobile phone. It has a very good camera quality."
+  },
+  {
+    "id": 12,
+    "productType": "Laptop",
+    "productName": "Mi Notebook",
+    "brandName": "Mi",
+    "productImage": "assets/fan.jpg",
+    "productPrice": 2000,
+    "productDescription": "This is a laptop. It has very good audio quality."
+  },
+  {
+    "id": 13,
+    "productType": "Earphone",
+    "productName": "Mi Earbuds 12",
+    "brandName": "Redmi",
+    "productImage": "assets/fan.jpg",
+    "productPrice": 3000,
+    "productDescription": "Earphonesssssssssss."
   }
 ]

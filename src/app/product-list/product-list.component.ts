@@ -24,18 +24,32 @@ export class ProductListComponent implements OnInit {
     this.products = this.productService.getProducts();
   }
 
-  async removeItem(id: number) {
+  async showRemoveDialog(temp: number, index: number) {
     const { AlertComponent } = await import('../alert/alert.component');
     const factory = this.cfr.resolveComponentFactory(AlertComponent);
     const componentRef = this.vcref.createComponent(factory);
-    componentRef.instance.emitter.subscribe((check) => {
+    componentRef.instance.emitter.subscribe((check: boolean) => {
       if (check) {
         componentRef.destroy();
-        this.products = this.products.filter((element) => element.id !== id);
-        this.productService.removeProduct(id);
+        const removedProduct = this.products[index];
+        this.products.splice(index, 1);
+        this.productService.removeProduct(index);
+        this.loadUndoComponent(removedProduct, index);
       } else {
         componentRef.destroy();
       }
     });
+  }
+  async loadUndoComponent(removedProduct: Product, index: number) {
+    const { UndoComponent } = await import('../undo/undo.component');
+    const factory = this.cfr.resolveComponentFactory(UndoComponent);
+    const componentRef = this.vcref.createComponent(factory);
+    componentRef.instance.emitter.subscribe((check) => {
+      this.productService.addProduct(removedProduct, index);
+      componentRef.destroy();
+    });
+    setTimeout(() => {
+      componentRef.destroy();
+    }, 5000);
   }
 }

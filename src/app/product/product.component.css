@@ -18,6 +18,9 @@
   border-radius: 5px;
   padding: 10px;
 }
+a {
+  cursor: pointer;
+}
 a:link {
   color: red;
   border: darkgoldenrod;

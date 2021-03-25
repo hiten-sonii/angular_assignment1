@@ -9,12 +9,17 @@ import { Output, EventEmitter } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
   @Input() item: Product;
-  constructor() {}
-
   @Output() removeItemEvent: EventEmitter<number> = new EventEmitter<number>();
+  showMore: boolean;
+  constructor() {
+    this.showMore = false;
+  }
   ngOnInit(): void {}
-  removeItem(id: number): void {
-    console.log('id:', id);
-    this.removeItemEvent.emit(id);
+  removeItem(): void {
+    this.removeItemEvent.emit(1);
+  }
+
+  toggleShowMore() {
+    this.showMore = !this.showMore;
   }
 }

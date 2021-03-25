@@ -1,10 +1,9 @@
 <div>
-  <!-- <ng-template #alert></ng-template> -->
   <ol>
-    <li *ngFor="let product of products">
+    <li *ngFor="let product of products; let i = index">
       <app-product
         [item]="product"
-        (removeItemEvent)="removeItem($event)"
+        (removeItemEvent)="showRemoveDialog($event, i)"
       ></app-product>
     </li>
   </ol>
