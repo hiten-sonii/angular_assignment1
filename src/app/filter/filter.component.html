@@ -1,0 +1,23 @@
+<div>
+  <h3>Select the product type:</h3>
+  <select [(ngModel)]="selectedType" name="types" (change)="getBrands()">
+    <option value=""></option>
+    <option *ngFor="let type of types" [value]="type">
+      {{ type }}
+    </option>
+  </select>
+  <div *ngIf="selectedType">
+    <h3>Enter maximum price</h3>
+    <input type="number" [(ngModel)]="maxPrice" />
+    <h3>Select the brand</h3>
+    <select [(ngModel)]="selectedBrand" name="brand">
+      <option value=""></option>
+      <option *ngFor="let brand of brands" value="brand">
+        {{ brand }}
+      </option>
+    </select>
+  </div>
+  <button *ngIf="selectedBrand" (click)="filterProducts()">SEARCH</button>
+</div>
+
+<router-outlet></router-outlet>
