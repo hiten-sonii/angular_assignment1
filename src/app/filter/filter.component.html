@@ -12,12 +12,17 @@
     <h3>Select the brand</h3>
     <select [(ngModel)]="selectedBrand" name="brand">
       <option value=""></option>
-      <option *ngFor="let brand of brands" value="brand">
+      <option *ngFor="let brand of brands" [value]="brand">
         {{ brand }}
       </option>
     </select>
   </div>
-  <button *ngIf="selectedBrand" (click)="filterProducts()">SEARCH</button>
+  <button
+    *ngIf="selectedBrand"
+    [routerLink]="['/filter', selectedType, maxPrice, selectedBrand]"
+  >
+    SEARCH
+  </button>
 </div>
 
 <router-outlet></router-outlet>

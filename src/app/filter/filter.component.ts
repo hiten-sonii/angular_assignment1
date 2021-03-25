@@ -14,14 +14,11 @@ export class FilterComponent implements OnInit {
   selectedBrand: string;
   selectedType: string;
   ngOnInit(): void {
+    this.productService.getProducts();
     this.types = this.productService.getProductTypes();
   }
 
   getBrands() {
     this.brands = this.productService.getBrandsByType(this.selectedType);
-  }
-
-  filterProducts() {
-    
   }
 }

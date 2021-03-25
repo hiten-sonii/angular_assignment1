@@ -53,7 +53,26 @@ export class ProductService {
         brandsArray.push(product.brandName);
       }
     });
-
     return brandsArray;
+  }
+
+  getProductsByFilter(
+    type: string,
+    brand: string,
+    maxPrice: number
+  ): Product[] {
+    maxPrice = maxPrice | 100000;
+    const filteredArray: Product[] = [];
+    this.productsArray.forEach((product) => {
+      console.log(product.productPrice, maxPrice);
+      if (
+        product.brandName === brand &&
+        product.productPrice < maxPrice &&
+        product.productType === type
+      ) {
+        filteredArray.push(product);
+      }
+    });
+    return filteredArray;
   }
 }

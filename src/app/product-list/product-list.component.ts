@@ -6,6 +6,7 @@ import {
 } from '@angular/core';
 import { ProductService } from '../product.service';
 import { Product } from '../product';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -16,12 +17,23 @@ export class ProductListComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private cfr: ComponentFactoryResolver,
-    private vcref: ViewContainerRef
+    private vcref: ViewContainerRef,
+    private route: ActivatedRoute
   ) {}
   products: Product[] = [];
 
   ngOnInit(): void {
-    this.products = this.productService.getProducts();
+    this.route.params.subscribe((params) => {
+      if (params.productType) {
+        this.products = this.productService.getProductsByFilter(
+          params.productType,
+          params.productBrand,
+          params.maxPrice
+        );
+      } else {
+        this.products = this.productService.getProducts();
+      }
+    });
   }
 
   async showRemoveDialog(temp: number, index: number) {
