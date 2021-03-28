@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Product } from './product';
-import * as productsJson from '../assets/products.json';
+import { Product } from 'src/app/product';
+import * as productsJson from '../../../../../assets/products.json';
 
 @Injectable({
   providedIn: 'root',
@@ -56,19 +56,13 @@ export class ProductService {
     return brandsArray;
   }
 
-  getProductsByFilter(
-    type: string,
-    brand: string,
-    maxPrice: number
-  ): Product[] {
-    maxPrice = maxPrice | 100000;
+  getProductsByFilter(filter: any): Product[] {
     const filteredArray: Product[] = [];
     this.productsArray.forEach((product) => {
-      console.log(product.productPrice, maxPrice);
       if (
-        product.brandName === brand &&
-        product.productPrice < maxPrice &&
-        product.productType === type
+        product.brandName === filter.brandName &&
+        product.productPrice < filter.maxPrice &&
+        product.productType === filter.productType
       ) {
         filteredArray.push(product);
       }

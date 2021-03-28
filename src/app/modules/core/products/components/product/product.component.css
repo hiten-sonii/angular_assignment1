@@ -1,0 +1,35 @@
+.box {
+  height: auto;
+  width: 500px;
+  text-align: center;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  margin-bottom: 30px;
+  box-shadow: 5px 5px;
+  border-radius: 25px;
+  background-color: cornsilk;
+  /* background: rgb(2, 0, 36);
+  background: linear-gradient(
+    45deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(251, 227, 119, 0.6326680330335259) 0%,
+    rgba(0, 212, 255, 1) 100%
+  ); */
+}
+
+a {
+  cursor: pointer;
+}
+a:link {
+  color: red;
+  border: darkgoldenrod;
+}
+
+a:hover {
+  color: firebrick;
+}
+
+a:active {
+  color: black;
+}

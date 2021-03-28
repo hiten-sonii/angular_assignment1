@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FilterComponent } from '../filter/filter.component';
-import { ProductListComponent } from '../product-list/product-list.component';
+import { ProductListComponent } from '../modules/core/products/components/product-list/product-list.component';
 
 const routes: Routes = [
   { path: 'all', component: ProductListComponent },
-  { path: 'filter', component: FilterComponent },
   {
-    path: 'filter/:productType/:maxPrice/:productBrand',
+    path: 'filtered',
     component: ProductListComponent,
   },
+  { path: '**', redirectTo: 'all', pathMatch: 'full' },
 ];
 
 @NgModule({

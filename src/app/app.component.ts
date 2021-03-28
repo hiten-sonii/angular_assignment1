@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'Product Listing Page';
+  isChatbotEnabled: boolean = false;
+  title = 'Welcome to the Product Listing App';
+
+  toggleChatbot(): void {
+    this.isChatbotEnabled = !this.isChatbotEnabled;
+  }
 }

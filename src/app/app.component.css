@@ -1,1 +1,31 @@
+:host ::ng-deep .sticky {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: #2184cd;
+  color: #fff;
+  padding: 20px;
+  width: 400px;
+}
+:host ::ng-deep button {
+  margin: 10px;
+  width: 175px;
+  box-shadow: inset 0 1px 0 0 #ffffff;
+  background: #ffffff linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+  border-radius: 6px;
+  border: 1px solid #8d3939;
+  display: inline-block;
+  cursor: pointer;
+  color: #666666;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #ffffff;
+  outline: 0;
+}
 
+:host ::ng-deep button:hover {
+  color: brown;
+}

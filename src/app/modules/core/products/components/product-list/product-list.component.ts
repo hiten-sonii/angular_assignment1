@@ -4,9 +4,9 @@ import {
   OnInit,
   ViewContainerRef,
 } from '@angular/core';
-import { ProductService } from '../product.service';
-import { Product } from '../product';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Product } from '../../../../../product';
+import { ActivatedRoute } from '@angular/router';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -23,13 +23,9 @@ export class ProductListComponent implements OnInit {
   products: Product[] = [];
 
   ngOnInit(): void {
-    this.route.params.subscribe((params) => {
+    this.route.queryParams.subscribe((params) => {
       if (params.productType) {
-        this.products = this.productService.getProductsByFilter(
-          params.productType,
-          params.productBrand,
-          params.maxPrice
-        );
+        this.products = this.productService.getProductsByFilter(params);
       } else {
         this.products = this.productService.getProducts();
       }
@@ -37,23 +33,25 @@ export class ProductListComponent implements OnInit {
   }
 
   async showRemoveDialog(temp: number, index: number) {
-    const { AlertComponent } = await import('../alert/alert.component');
+    const { AlertComponent } = await import(
+      '../../../../shared/alert/components/alert.component'
+    );
     const factory = this.cfr.resolveComponentFactory(AlertComponent);
     const componentRef = this.vcref.createComponent(factory);
     componentRef.instance.emitter.subscribe((check: boolean) => {
       if (check) {
-        componentRef.destroy();
         const removedProduct = this.products[index];
         this.products.splice(index, 1);
         this.productService.removeProduct(index);
         this.loadUndoComponent(removedProduct, index);
-      } else {
-        componentRef.destroy();
       }
+      componentRef.destroy();
     });
   }
   async loadUndoComponent(removedProduct: Product, index: number) {
-    const { UndoComponent } = await import('../undo/undo.component');
+    const { UndoComponent } = await import(
+      '../../../../shared/undo/undo.component'
+    );
     const factory = this.cfr.resolveComponentFactory(UndoComponent);
     const componentRef = this.vcref.createComponent(factory);
     componentRef.instance.emitter.subscribe((check) => {

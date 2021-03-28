@@ -1,6 +1,9 @@
 <h1>{{ title }}</h1>
-<div class="wrapper">
-  <a routerLink="/all">All Products</a><br />
-  <a routerLink="/filter">Filter Products</a>
-  <router-outlet></router-outlet>
+<div>
+  <button routerLink="/all">All Products</button>
+  <button (click)="toggleChatbot()">Filter Products</button>
 </div>
+<div *ngIf="isChatbotEnabled" class="sticky">
+  <app-filter></app-filter>
+</div>
+<router-outlet></router-outlet>

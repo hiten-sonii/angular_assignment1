@@ -17,12 +17,5 @@
       </option>
     </select>
   </div>
-  <button
-    *ngIf="selectedBrand"
-    [routerLink]="['/filter', selectedType, maxPrice, selectedBrand]"
-  >
-    SEARCH
-  </button>
+  <button *ngIf="selectedBrand" (click)="navigateToProducts()">SEARCH</button>
 </div>
-
-<router-outlet></router-outlet>

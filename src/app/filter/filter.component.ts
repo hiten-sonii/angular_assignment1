@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../product.service';
-
+import { Router } from '@angular/router';
+import { ProductService } from '../modules/core/products/services/product.service';
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.css'],
 })
 export class FilterComponent implements OnInit {
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private router: Router) {}
   types: string[];
   brands: string[];
-  maxPrice: number;
+  maxPrice: number = 100000;
   selectedBrand: string;
   selectedType: string;
   ngOnInit(): void {
@@ -20,5 +20,15 @@ export class FilterComponent implements OnInit {
 
   getBrands() {
     this.brands = this.productService.getBrandsByType(this.selectedType);
+  }
+
+  navigateToProducts() {
+    this.router.navigate(['/filtered'], {
+      queryParams: {
+        productType: this.selectedType,
+        maxPrice: this.maxPrice,
+        brandName: this.selectedBrand,
+      },
+    });
   }
 }
