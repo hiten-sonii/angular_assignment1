@@ -11,8 +11,7 @@ import {
 })
 export class ReadMoreDirective implements AfterViewInit {
   @Input('appReadMore') showMoreEnabled: any;
-
-  maxLength: number = 10;
+  @Input('maxLength') maxLength: number;
   text: string;
   textElement: HTMLParagraphElement;
 

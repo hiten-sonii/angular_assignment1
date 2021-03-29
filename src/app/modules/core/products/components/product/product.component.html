@@ -2,7 +2,7 @@
   <img [src]="item.productImage" height="200px" width="200px" />
   <h2>{{ item.productName | uppercase }}</h2>
   <h3>Brand: {{ item.brandName }}</h3>
-  <div [appReadMore]="showMore">
+  <div [appReadMore]="showMore" [maxLength]="10">
     <p>
       {{ item.productDescription }}
     </p>
