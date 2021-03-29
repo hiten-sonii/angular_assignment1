@@ -40,8 +40,7 @@ export class ProductListComponent implements OnInit {
     const componentRef = this.vcref.createComponent(factory);
     componentRef.instance.emitter.subscribe((check: boolean) => {
       if (check) {
-        const removedProduct = this.products[index];
-        this.products.splice(index, 1);
+        const removedProduct = this.products.splice(index, 1)[0];
         this.productService.removeProduct(index);
         this.loadUndoComponent(removedProduct, index);
       }

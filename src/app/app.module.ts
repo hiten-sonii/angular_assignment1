@@ -8,6 +8,7 @@ import { FilterComponent } from './filter/filter.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { ProductComponent } from './modules/core/products/components/product/product.component';
+import { NotFoundComponent } from './modules/shared/not-found/components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -17,9 +18,10 @@ import { ProductComponent } from './modules/core/products/components/product/pro
     CurrencyPipe,
     ReadMoreDirective,
     FilterComponent,
+    NotFoundComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  
+
   providers: [],
   bootstrap: [AppComponent],
 })
