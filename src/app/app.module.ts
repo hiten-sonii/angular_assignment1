@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { ProductComponent } from './modules/core/products/components/product/product.component';
 import { NotFoundComponent } from './modules/shared/not-found/components/not-found/not-found.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { NotFoundComponent } from './modules/shared/not-found/components/not-fou
     FilterComponent,
     NotFoundComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
 
   providers: [],
   bootstrap: [AppComponent],

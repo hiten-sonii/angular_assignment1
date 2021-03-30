@@ -1,26 +1,30 @@
 import { Injectable } from '@angular/core';
 import { Product } from 'src/app/product';
-import * as productsJson from '../../../../../assets/products.json';
+import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
-  productsArray: Product[];
-  constructor() {
-    this.productsArray = [];
-  }
+  productsArray: Product[] = [];
+  constructor(private http: HttpClient) {}
+  url: string = '../../../../../assets/products.json';
 
-  getProducts(): Product[] {
+  getProducts(): Observable<Product[]> {
     const localData = localStorage.getItem('localData');
     if (!localData) {
-      const dataFromJson = (productsJson as any).default;
-      this.productsArray = dataFromJson;
-      localStorage.setItem('localData', JSON.stringify(this.productsArray));
+      return this.http.get<Product[]>(this.url).pipe(
+        tap((data) => {
+          this.productsArray = data;
+          localStorage.setItem('localData', JSON.stringify(this.productsArray));
+        })
+      );
     } else {
       this.productsArray = JSON.parse(localData);
+      return of(this.productsArray);
     }
-    return this.productsArray;
   }
 
   removeProduct(index: number) {

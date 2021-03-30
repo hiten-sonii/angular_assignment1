@@ -27,7 +27,7 @@ export class ProductListComponent implements OnInit {
       if (params.productType) {
         this.products = this.productService.getProductsByFilter(params);
       } else {
-        this.products = this.productService.getProducts();
+        this.productService.getProducts().subscribe((data: Product[]) => this.products = data);
       }
     });
   }

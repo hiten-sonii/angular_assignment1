@@ -11,6 +11,6 @@ export class CurrencyPipe implements PipeTransform {
     JPY: '¥',
   };
   transform(value: number, currName: string): string {
-    return this.currencyMap[currName] + ' ' + value;
+    return this.currencyMap[currName] + ' ' + (value).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');;
   }
 }
